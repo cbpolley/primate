@@ -1,15 +1,17 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /** Ionic CSS Variables **/
 :root {
+  --ion-font-family: 'Poppins', sans-serif;
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+	--ion-color-primary: #55FFA3;
+	--ion-color-primary-rgb: 85,255,163;
+	--ion-color-primary-contrast: #000000;
+	--ion-color-primary-contrast-rgb: 0,0,0;
+	--ion-color-primary-shade: #4be08f;
+	--ion-color-primary-tint: #66ffac;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -52,12 +54,12 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-danger-tint: #ed576b;
 
   /** dark **/
-  --ion-color-dark: #222428;
-  --ion-color-dark-rgb: 34, 36, 40;
-  --ion-color-dark-contrast: #ffffff;
-  --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #1e2023;
-  --ion-color-dark-tint: #383a3e;
+	--ion-color-dark: #0E0F11;
+	--ion-color-dark-rgb: 14,15,17;
+	--ion-color-dark-contrast: #ffffff;
+	--ion-color-dark-contrast-rgb: 255,255,255;
+	--ion-color-dark-shade: #0c0d0f;
+	--ion-color-dark-tint: #262729;
 
   /** medium **/
   --ion-color-medium: #92949c;
@@ -233,4 +235,29 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.ion-color-primary {
+	--ion-color-base: var(--ion-color-primary);
+	--ion-color-base-rgb: var(--ion-color-primary-rgb);
+	--ion-color-contrast: var(--ion-color-primary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-primary-shade);
+	--ion-color-tint: var(--ion-color-primary-tint);
+}
+
+/* custom global css */
+.custom-margin{
+  margin: 0 14px
+}
+
+ion-content::part(background){
+  --background:none;
+}
+
+.ion-padding-horizontal{
+  --padding-start: var(--ion-padding, 24px);
+  --padding-end: var(--ion-padding, 24px);
+  padding-inline-start: var(--ion-padding, 24px);
+  padding-inline-end: var(--ion-padding, 24px);
 }
