@@ -3,12 +3,11 @@
     <ion-label slot="start">{{props.label}}</ion-label>
     <ion-grid>
       <ion-row class="ion-align-items-center">
-        <ion-col>
+
           <ion-button :color="amount?'dark':'medium'" @click="iterateAmount('minus')">
             <ion-icon size="large" color="primary" :icon="removeOutline" aria-label="Remove item"></ion-icon>
           </ion-button>
-        </ion-col>
-        <ion-col class="ion-text-center">
+
           <ion-item lines="none">
               <h1>
                 <strong>
@@ -16,12 +15,9 @@
                 </strong>
               </h1>
           </ion-item>
-        </ion-col>
-        <ion-col>
           <ion-button :color="amount?'dark':'medium'" @click="iterateAmount('plus')">
             <ion-icon size="large" color="primary" :icon="addOutline" aria-label="Add item"></ion-icon>
           </ion-button>
-        </ion-col>
       </ion-row>
     </ion-grid>
   </ion-item>
