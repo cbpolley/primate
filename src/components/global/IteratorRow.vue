@@ -1,6 +1,10 @@
 <template>
   <ion-item lines="none">
-    <ion-label slot="start" class="ion-no-margin">{{props.label}}</ion-label>
+    <ion-label slot="start" class="ion-no-margin">
+      <p style="color:black;">
+        <strong>{{props.label}}</strong>
+      </p>
+    </ion-label>
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-end">
 

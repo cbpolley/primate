@@ -15,7 +15,7 @@
         <ion-card-content class="ion-no-padding">
           <IteratorRow @amountChange="updateValue('totalNumber', $event)" label="Total Number"/>
           <ion-item lines="none">
-            <h6 slot="start">Split into (if known)</h6>
+            <p slot="start" style="font-size:12.64px; font-weight:600">Split into (if known)</p>
           </ion-item>
           <IteratorRow :item="extraInfoDetails.totalNumber" label="Adult female"/>
           <IteratorRow :item="extraInfoDetails.totalNumber" label="Adult male"/>
