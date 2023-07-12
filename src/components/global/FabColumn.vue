@@ -1,13 +1,13 @@
 <template>
   <ion-fab slot="fixed" horizontal="end" vertical="top" :activated="true" >
-    <ion-fab-list>
-      <ion-fab-button>
+    <ion-fab-list v-model="listModel">
+      <ion-fab-button :disabled="true">
         <ion-icon :icon="images.layer"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
+      <ion-fab-button :disabled="true">
         <ion-icon :icon="images.direction"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
+      <ion-fab-button :disabled="true">
         <ion-icon :icon="images.pin"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
@@ -15,6 +15,7 @@
 </template>
 
 <script setup>
+  import { ref } from 'vue'
   import { IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/vue';
 
   const images = { 
@@ -22,6 +23,8 @@
     direction : require('@/assets/icons/direction.svg'),
     pin : require('@/assets/icons/pin.svg'),
   } 
+
+  const listModel = ref()
 
 </script>
 
