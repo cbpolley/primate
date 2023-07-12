@@ -11,8 +11,8 @@
           </strong>
         </ion-title>
         <ion-buttons slot="end">
-          <ion-button color="dark" fill="solid" shape="round" style="width:40px; height:40px">
-            <ion-icon :icon="closeOutline" size="large"></ion-icon>
+          <ion-button color="dark" fill="solid" shape="round" style="width:40px; height:40px;" @click="firstPage" >
+            <ion-icon :icon="closeOutline" size="large" style="box-shadow:0 4px 16px rgba(0, 0, 0, 0.12);"></ion-icon>
           </ion-button>
         </ion-buttons>
         <ion-progress-bar :value="getProgressPercent"></ion-progress-bar>
@@ -53,6 +53,10 @@
           progress.value++;
         }, 500);
       }
+
+  function firstPage (){
+    progress.value = 1;
+  }
 
   const getProgressPercent = computed(() => progress.value * 0.34)
 

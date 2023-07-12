@@ -1,20 +1,20 @@
 <template>
   <ion-item lines="none">
-    <ion-label slot="start">{{props.label}}</ion-label>
+    <ion-label slot="start" class="ion-no-margin">{{props.label}}</ion-label>
     <ion-grid>
-      <ion-row class="ion-align-items-center">
+      <ion-row class="ion-align-items-center ion-justify-content-end">
 
           <ion-button :color="amount?'dark':'medium'" @click="iterateAmount('minus')">
             <ion-icon size="large" color="primary" :icon="removeOutline" aria-label="Remove item"></ion-icon>
           </ion-button>
-
-          <ion-item lines="none">
-              <h1>
+          <div style="min-width:50px;">
+              <h1 class="ion-text-center">
                 <strong>
                   {{ amount }}
                 </strong>
               </h1>
-          </ion-item>
+          </div>
+          <div style="flex-grow-1"></div>
           <ion-button :color="amount?'dark':'medium'" @click="iterateAmount('plus')">
             <ion-icon size="large" color="primary" :icon="addOutline" aria-label="Add item"></ion-icon>
           </ion-button>
@@ -62,5 +62,9 @@ ion-button::part(native){
 ion-button ion-icon{
   height:22px;
   width:22px;
+}
+
+ion-icon {
+  color: red;
 }
 </style>

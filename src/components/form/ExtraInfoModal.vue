@@ -5,12 +5,12 @@
     :isOpen="openModal" 
     :initial-breakpoint="0.75" 
     :breakpoints="[0, 0.25, 0.5, 0.75, 1]">
-    <ion-content class="ion-no-padding">
-      <ion-title class="ion-text-start ion-padding-horizontal">
+    <ion-content class="ion-no-padding ion-padding-vertical">
+      <ion-text class="ion-text-start ion-padding-horizontal">
         <h6>
           How many individuals did you see?
         </h6>
-      </ion-title>
+      </ion-text>
       <ion-card class="custom">
         <ion-card-content class="ion-no-padding">
           <IteratorRow @amountChange="updateValue('totalNumber', $event)" label="Total Number"/>
@@ -22,40 +22,40 @@
           <IteratorRow :item="extraInfoDetails.totalNumber" label="Juvenile/Infant"/>
         </ion-card-content>
       </ion-card>
-      <ion-title class="ion-text-start ion-padding-horizontal">
+      <ion-text class="ion-text-start ion-padding-top ion-padding-horizontal">
         <h6>
           How many troops did you see?
         </h6>
-      </ion-title>
+      </ion-text>
       <ion-card class="custom">
         <ion-card-content class="ion-no-padding">
           <IteratorRow :item="extraInfoDetails.totalNumber" label="Troop number"/>
         </ion-card-content>
       </ion-card>
-      <ion-title class="ion-text-start ion-padding-horizontal">
+      <ion-text class="ion-text-start ion-padding-top ion-padding-horizontal">
         <h6>
           Add photos if possible
         </h6>
-      </ion-title>
+      </ion-text>
       <ion-grid>
-        <ion-row>
-          <ion-col v-for="(photo, index) in extraInfoDetails.photos" :key="`photo${index}`">
-            <ion-card class="ion-margin" @click="takePicture(index)">
-              <ion-card-content class="ion-text-center" style="height:100px; width:100px; margin:auto; display:flex; justify-content:center; align-items:center;">
-                    <ion-icon :icon="images.camera" style="height:32px; width:32px;"></ion-icon>
+        <ion-row class="ion-margin-horizontal ion-justify-content-between" >
+          <ion-col v-for="(photo, index) in extraInfoDetails.photos" :key="`photo${index}`" class="ion-no-padding ion-no-margin flex-grow-0 text-center">
+            <ion-card class="ion-no-padding ion-no-margin rounded-xl" @click="takePicture(index)" style="height:calc(30vw - 16px); width:calc(30vw - 16px); margin:auto; box-shadow:0 4px 16px rgba(0, 0, 0, 0.12); border-radius:8px;">
+              <ion-card-content class="ion-text-center" style="height:100%; width:100%; margin:auto; display:flex; justify-content:center; align-items:center;">
+                <ion-icon :icon="images.camera" style="height:32px; width:32px;"></ion-icon>
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-title class="ion-text-start ion-padding-horizontal">
+      <ion-text class="ion-text-start ion-padding-top ion-padding-horizontal">
         <h6>
           Any other observations
         </h6>
-      </ion-title>      
-      <ion-card class="ion-margin-bottom" style="margin:24px; 0px">
-        <ion-textarea v-model="extraInfoDetails.observations" fill="outline" rows="6"></ion-textarea>
-      </ion-card>
+      </ion-text>      
+      <ion-item class="ion-margin-bottom ion-margin-horizontal" style="margin: 0px 28px; border:1px solid black; border-radius:8px;">
+          <ion-textarea v-model="extraInfoDetails.observations" rows="6"></ion-textarea>
+        </ion-item>
     </ion-content> 
   </ion-modal>  
 </template>
@@ -68,11 +68,11 @@
   import { 
     IonContent,
     IonGrid, IonRow, IonCol,
-    IonTitle, 
     IonIcon,
     IonCard,
     IonCardContent,
     IonTextarea,
+    IonText,
     IonItem,
     IonModal  } from '@ionic/vue';
   import { closeOutline, searchOutline, addOutline } from 'ionicons/icons';
@@ -82,9 +82,9 @@
       IonContent,
       IteratorRow,
       IonGrid, IonRow, IonCol,
-      IonTitle, 
       IonCard,
       IonCardContent,
+      IonText,
       IonTextarea,
       IonIcon,
       IonModal,
@@ -183,7 +183,7 @@ ion-item.custom {
 }
 
 ion-card.custom {
-  --border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0px 4px 46px 0px rgba(14, 15, 17, 0.06);
   margin:24px;
   
@@ -192,7 +192,9 @@ ion-card.custom {
 ion-toolbar{
   --min-height:56px;
 }
-
+ion-text{
+  display: block;
+}
 .primate-search::part(native){
   height:62px;
   border-radius:50px;
@@ -215,8 +217,9 @@ ion-progress-bar::part(track){
   border-radius:12px;
 }
 
-ion-textarea{
-  border-radius: 4px;
-border: 1px solid var(--grey-70, #555C63);
+h6{
+  font-size: 14.22px;
+  font-weight: bold;
 }
+
 </style>
