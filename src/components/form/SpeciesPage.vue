@@ -2,7 +2,7 @@
     <ion-content class="ion-no-padding">
       <ion-item class="primate-search ion-no-padding ion-margin-top ion-padding-horizontal" lines="none" fill="outline">
         <img alt="Search icon" :src="images.magnify" size="10"/>
-        <ion-input placeholder="Search primates" class="ion-margin-start"></ion-input>
+        <ion-input placeholder="Search primates" class="ion-margin-start" v-model="searchTerm"></ion-input>
       </ion-item>
       <ion-list>
         <RecycleScroller 
@@ -60,6 +60,7 @@
   }
 
   const filteredList = computed(() => {
+
     if (searchTerm.value !== ''){
       return list.filter(v => v.name.includes(searchTerm.value))
     } else {
